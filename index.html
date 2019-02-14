@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class = "page">
+  <main class="content page__content">
+      <h1 class="page__title">CCHelper</h1>
+      <div class="container">
+        <div class="container-tabs">
+            <ul class="tab__list">
+                <li class="tab tab-voucher">Voucher</li>
+                <li class="tab tab-change">Change</li>
+                <li class="tab tab-prolong">Prolong</li>
+            </ul>
+        </div>
+      
+      <form id="form__voucher" class="form form__voucher form--hidden">
+          <div class="form__group" > <!--  Project -->
+            <span class="form__group--text">Original Project</span>
+            <input type="url" class="form__control js-input js-input--voucher" id="VoriginalProject"
+            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            autocomplete="off">            
+          </div>
+          <div class="form__group" > <!-- Currency -->
+            <span class="form__group--text">Currency</span>
+            <input type="text" class="form__control js-input js-input--voucher" id="Vcurrency"
+            placeholder="EUR" autocomplete="off">
+          </div>
+          <div class="form__group" ><!-- Years Paid for the PP-->
+            <span class="form__group--text">Years Paid</span>
+            <input type="number" class="form__control js-input js-input--voucher" id="VyearsPaid"
+            placeholder="Years Paid" autocomplete="off">         
+          </div>     
+          <div class="form__group" > <!-- Amount Paid for the PP -->
+            <span class="form__group--text">Amount Paid</span>
+            <input type="number" class="form__control js-input js-input--voucher" id="VamountPaid"
+            step=".01" placeholder="Amount Paid" autocomplete="off">          
+          </div>     
+          <div class="form__group"> <!-- Expiration date current package-->
+            <span class="form__group--text">Original Expiry Date</span>
+            <input type="text" class="form__control js-input js-input--voucher" id="VoriginalExpiration"
+            placeholder="YYYY-MM-DD" autocomplete="off">
+          </div>        
+          <div class="form__group"> <!-- Calculate "Button" -->
+            <input type="submit" class="btn btn__form__voucher js-btn--calculate" id="Vsubmit"
+            value="Calculate Voucher">
+            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Vreset"
+            value="Reset">      
+          </div>
+      </form> <!-- END Form Voucher-->
+                          <!--Form Change-->
+      <form id="form__change" class="form form__change form--hidden">
+          <div class="form__group" > <!--  Project -->
+            <span class="form__group--text">Original Project</span>
+            <input type="url" class="form__control js-input js-input--change " id="CoriginalProject"
+            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            autocomplete="off">            
+          </div>
+          <div class="form__group" > <!-- Original Type of PP -->
+            <span class="form__group--text">Original Type of PP</span>
+            <input type="text" class="form__control js-input js-input--change" id="CoriginalType"
+            placeholder="Profi" autocomplete="off">
+          </div>
+          <div class="form__group"> <!-- Destination Project -->
+            <span class="form__group--text">Dest. Project URL</span>
+            <input type="url" class="form__control js-input js-input--change" id="CdestinationProject"
+            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            autocomplete="off">           
+          </div>
+          <div class="form__group" > <!-- Destination Type of PP -->
+            <span class="form__group--text">Destination Type of PP</span>
+            <input type="text" class="form__control js-input js-input--change" id="CdestinationType"
+            placeholder="Profi" autocomplete="off">
+          </div>
+          <div class="form__group" > <!-- Currency -->
+            <span class="form__group--text">Currency</span>
+            <input type="text" class="form__control js-input js-input--change" id="Ccurrency"
+            placeholder="EUR" autocomplete="off">
+          </div>
+          <div class="form__group" ><!-- Years Paid for the PP-->
+            <span class="form__group--text">Years Paid</span>
+            <input type="number" class="form__control js-input js-input--change" id="CyearsPaid"
+            placeholder="Years Paid" autocomplete="off">         
+          </div>     
+          <div class="form__group" > <!-- Amount Paid for the PP -->
+            <span class="form__group--text">Amount Paid</span>
+            <input type="number" class="form__control js-input js-input--change" id="CamountPaid"
+            step=".01" placeholder="Amount Paid" autocomplete="off">          
+          </div>     
+          <div class="form__group"> <!-- Expiration date current package-->
+            <span class="form__group--text">Original Expiry Date</span>
+            <input type="text" class="form__control js-input js-input--change" id="CoriginalExpiration"
+            placeholder="YYYY-MM-DD" autocomplete="off">
+          </div>
+          <div class="form__group"> <!-- Price of Package Destination Project-->
+            <span class="form__group--text">Dest. Package Price</span>
+            <input type="text" class="form__control js-input js-input--change" id="CdestinationPackagePrice"
+            placeholder="New Package Price" autocomplete="off">  
+          </div>
+          <div class="form__group"> <!-- Expiration date Destination Project-->
+            <span class="form__group--text">Dest. Expiration Date</span>
+            <input type="text" class="form__control js-input js-input--change" id="CdestinationExpiration"
+            placeholder="YYYY-MM-DD" autocomplete="off">
+          </div>      
+          <div class="form__group js-btn--change"> <!-- Calculate "Button" -->
+            <input type="submit" class="btn btn__form__change js-btn--calculate" id="Csubmit"
+            value="Calculate Change">       
+            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Creset"
+            value="Reset">
+          </div>
+          
+      </form>
+      <form id="form__prolong" class="form form__prolong form--hidden">
+          <div class="form__group"> <!-- Destination Project -->
+            <span class="form__group--text">Dest. Project URL</span>
+            <input type="url" class="form__control js-input js-input--prolong" id="PdestinationProject"
+            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            autocomplete="off">           
+          </div>
+          <div class="form__group" > <!-- Destination Type of PP -->
+            <span class="form__group--text">Destination Type of PP</span>
+            <input type="text" class="form__control js-input js-input--prolong" id="PdestinationType"
+            placeholder="Profi" autocomplete="off">
+          </div>
+          <div class="form__group"><!-- Days to prolong-->
+            <span class="form__group--text">Days to Prolong</span>
+            <input type="number" class="form__control js-input js-input--prolong" id="PdaysProlong"
+            placeholder="Days to prolong" autocomplete="off">         
+          </div>
+          <div class="form__group"> <!-- Expiration date Destination Date-->
+            <span class="form__group--text">Dest. Expiration Date</span>
+            <input type="text" class="form__control js-input js-input--prolong" id="PdestinationExpiration"
+            placeholder="YYYY-MM-DD" autocomplete="off">
+          </div>
+          <div class="form__group js-prolong"> <!-- Calculate "Button" -->
+            <input type="submit" class="btn btn__form__prolong js-btn--calculate" id="Psubmit"
+            value="Calculate New Expiration Date"> 
+            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Preset"
+            value="Reset">     
+          </div>
+
+        </form><!-- END Form Prolong-->
+        <!-- LOADER-->
+        <div class="loader hidden" id="loading"></div>
+       
+          <!-- RESULTS-->
+          <div id="results" class="results hidden">
+            <h1 class= "results__heading">Results</h1>
+            <div class="form__group hidden js-results-voucher js-results-change">             
+                <span class="form__group--text">Days Remaining</span>
+                <input type="text" class="form__control js-output" id="daysRemaining"
+                disabled>         
+            </div>
+            <div class="form__group hidden js-results-voucher js-results-change">          
+                <span class="form__group--text">Amount Remaining</span>
+                <input type="text" class="form__control js-output" id="amountRemaining"
+                 disabled>         
+            </div>
+            <div class="form__group hidden js-results-change js-results-prolong">             
+                  <span class="form__group--text">New Expiration Date</span>
+                  <input type="text" class="form__control js-output" id="newExpirationDate"
+                   disabled>               
+            </div>
+            <div class="results__note" id="note"> <!--pb-auto mb-5-->
+            </div>
+
+        <div class="btn__wrapper form__group js-btn--copy js-results-voucher js-results-change js-results-prolong">         
+            <input type="submit" class="btn btn-dark btn-block" id="copy"
+            value="Copy to clipboard">         
+        </div>
+
+        </div> <!-- Results -->
+      </div> <!--Div container--> 
+  </main>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
