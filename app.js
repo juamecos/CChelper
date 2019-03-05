@@ -15,10 +15,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
       reloadPage();
     }
 
-    if(e.target.classList.contains("tab-change")) {
-      tabList.innerHTML = "<h2 class='page__heading--secondary'>Change</h2>        <div class='form__group js-reload'> <input type='submit' class='btn btn__form__reload js-btn--reload' id='reload'value='Reload'></div>";
+    if(e.target.classList.contains("tab-move")) {
+      tabList.innerHTML = "<h2 class='page__heading--secondary'>Move</h2>        <div class='form__group js-reload'> <input type='submit' class='btn btn__form__reload js-btn--reload' id='reload'value='Reload'></div>";
       formGroup.forEach(function(group){
-        if (group.classList.contains("form__change")) { 
+        if (group.classList.contains("form__move")) { 
+          group.classList.remove("form--hidden"); // Show voucher input fields
+        }
+      })
+      reloadPage();
+    }
+
+    if(e.target.classList.contains("tab-upgrade")) {
+      tabList.innerHTML = "<h2 class='page__heading--secondary'>Upgrade</h2>        <div class='form__group js-reload'> <input type='submit' class='btn btn__form__reload js-btn--reload' id='reload'value='Reload'></div>";
+      formGroup.forEach(function(group){
+        if (group.classList.contains("form__upgrade")) { 
           group.classList.remove("form--hidden"); // Show voucher input fields
         }
       })
@@ -34,26 +44,46 @@ document.addEventListener("DOMContentLoaded", (e) => {
       })
       reloadPage();
     }
+    if(e.target.classList.contains("icon-voucher")) {
+      console.log(e.target)
+    }
+    if(e.target.classList.contains("icon-move")) {
+      console.log(e.target)
+    }
+    if(e.target.classList.contains("icon-upgrade")) {
+      console.log(e.target)
+    }
+    if(e.target.classList.contains("icon-prolong")) {
+      console.log(e.target)
+    }
   }) // tabList.addEventListener
 
   // Patterns of input value with regex
    const patterns = {
-  VoriginalProject: /^https:\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
+  VoriginalProject: /^(http|https):\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
   Vcurrency: /^[A-Z]{3}$/,
   VyearsPaid: /^1$|^2$|^5$|^10$/,
   VamountPaid: /^(\d+)(\.\d{2})?$/,
   VoriginalExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
-  CoriginalProject: /^https:\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
-  CoriginalType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
-  CdestinationProject: /^https:\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
-  CdestinationType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
-  Ccurrency: /^[A-Z]{3}$/,
-  CyearsPaid: /^1$|^2$|^5$|^10$/,
-  CamountPaid: /^(\d+)(\.\d{2})?$/,
-  CoriginalExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
-  CdestinationPackagePrice: /^(\d+)(\.\d{2})?$/,
-  CdestinationExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
-  PdestinationProject: /^https:\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
+  MoriginalProject: /^(http|https):\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
+  MoriginalType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
+  MdestinationProject: /^(http|https):\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
+  MdestinationType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
+  Mcurrency: /^[A-Z]{3}$/,
+  MyearsPaid: /^1$|^2$|^5$|^10$/,
+  MamountPaid: /^(\d+)(\.\d{2})?$/,
+  MoriginalExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
+  MdestinationPackagePrice: /^(\d+)(\.\d{2})?$/,
+  MdestinationExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
+  UProject: /^(http|https):\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
+  UoriginalType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
+  UfinalType:/^Limited$|^Mini$|^Standard$|^Profi$/i,
+  Ucurrency: /^[A-Z]{3}$/,
+  UyearsPaid: /^1$|^2$|^5$|^10$/,
+  UamountPaid: /^(\d+)(\.\d{2})?$/,
+  UoriginalExpiration: /^(\d{4})-(\d{2})-(\d{2})$/,
+  UfinalPackagePrice: /^(\d+)(\.\d{2})?$/,
+  PdestinationProject: /^(http|https):\/\/tools\.webnode\.com\/project\/\?id=\d{8}$/,
   PdestinationType: /^Limited$|^Mini$|^Standard$|^Profi$/i,
   PdaysProlong: /^\d{1,4}$/,
   PdestinationExpiration: /^(\d{4})-(\d{2})-(\d{2})$/
@@ -134,16 +164,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // Show LOADER 
     document.getElementById('loading').classList.remove("hidden");
 
-
-  
     setTimeout(calculateVoucher, 1500);
-
-
   });
 
-  // Calculate Change --------------------
+  // Calculate Move --------------------
 
-const calculateChange = () => {
+const calculateMove = () => {
   // Populate object with inputs with value
 
   for(var i =0; i<inputs.length; i++) {
@@ -204,21 +230,92 @@ const calculateChange = () => {
 
   document.getElementById('loading').classList.add("hidden");      // hide LOADER
   document.getElementById('results').classList.remove("hidden");
-  let resultschange= document.getElementsByClassName
-  ('js-results-change');
-  removeHidden(resultschange);
+  let resultsMove= document.getElementsByClassName
+  ('js-results-move');
+  removeHidden(resultsMove);
 
 
-};  //function calculateChange
+};  //function calculateMove
 
-// Event Calculate Change
+// Event Calculate Move
 
-const formChange = document.querySelector(".form__change")
-formChange.addEventListener("submit", (e) => {
+const formMove = document.querySelector(".form__move")
+formMove.addEventListener("submit", (e) => {
   e.preventDefault();
   // Show LOADER 
   document.getElementById('loading').classList.remove("hidden");
-  setTimeout(calculateChange, 1500);
+  setTimeout(calculateMove, 1500);
+});
+
+
+    ///////////////////
+    //Calculate Upgrade --------------------
+
+const calculateUpgrade = () => {
+  // Populate object with inputs with value
+
+  for(var i =0; i<inputs.length; i++) {
+    if(inputs[i].value) {   //only if the input has a value
+      inputObject[inputs[i].id] = inputs[i].value;   // populates object   
+      inputClassLists[i] = inputs[i].parentElement.classList; 
+    }       
+  }; 
+  
+    // Computes the days Remaining
+  let daysRemaining = Math.ceil((new Date(inputObject.UoriginalExpiration).getTime() - new Date().getTime())/(24*60*60*1000)); 
+    // Computes the amountRemaining
+  let amountRemaining = (daysRemaining*inputObject.UamountPaid)/(inputObject.UyearsPaid*365);
+
+  // calculates days to prolong
+  let toProlong = (amountRemaining*365)/inputObject.UfinalPackagePrice; 
+
+  
+   const newExpirationDate = date.newExp(toProlong);
+   newExpirationDateElem.value = newExpirationDate;
+  
+
+  
+    // Gives values to the result inputs
+  amountRemainingElem.value = amountRemaining.toFixed(2);
+  daysRemainingElem.value = daysRemaining;
+  
+
+  if(isFinite(amountRemaining) || amountRemaining < amountPaid) {      
+    note.textContent =
+    `Hello, 
+    user wants to change the ${inputObject.UoriginalType}  premium package to a ${inputObject.UfinalType} premium package.
+
+    Original project: ${inputObject.UProject}
+    
+
+    Please activate the ${inputObject.UfinalType} package with the expiration date: ${newExpirationDateElem.value}
+    Later on I will put a note in the ticket and the project. 
+
+    Thank you
+    `;   
+
+   } 
+   // hide LOADER
+
+
+
+  document.getElementById('loading').classList.add("hidden");      // hide LOADER
+  document.getElementById('results').classList.remove("hidden");
+  let resultsMove= document.getElementsByClassName
+  ('js-results-upgrade');
+  removeHidden(resultsMove);
+
+
+};  //function calculateUpgrade
+
+// Event Calculate Upgrade
+
+const formUpgrade = document.querySelector(".form__upgrade");
+formUpgrade.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // Show LOADER 
+  document.getElementById('loading').classList.remove("hidden");
+  setTimeout(calculateUpgrade, 1500);
 });
 
   // Calculate Prolong ----------------------------------
@@ -325,10 +422,10 @@ formChange.addEventListener("submit", (e) => {
       inputObject = {};
     }
   });
-  formChange.addEventListener("click", function(e) {
+  formMove.addEventListener("click", function(e) {
     if(e.target.classList.contains("js-btn--reset")){
       e.preventDefault();
-      formChange.reset();
+      formMove.reset();
       inputObject = {};
     }
   });  
@@ -384,6 +481,6 @@ Date.prototype.newExp = function(days) {
   function clearError () {
     document.querySelector('.page__error').remove();
   }
-  
+
 }); // DOMContentLoaded
 

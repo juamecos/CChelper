@@ -13,9 +13,11 @@
       <div class="container">
         <div class="container-tabs">
             <ul class="tab__list">
-                <li class="tab tab-voucher">Voucher</li>
-                <li class="tab tab-change">Change</li>
-                <li class="tab tab-prolong">Prolong</li>
+                <li class="tab tab-voucher">Voucher<svg class="icon icon-info icon-voucher"><use xlink:href="/img/sprite.svg#icon-info"></use></svg></li>
+                <li class="tab tab-move">Move<svg class="icon icon-info icon-move"><use xlink:href="/img/sprite.svg#icon-info"></use></svg></li>
+                <li class="tab tab-upgrade">Upgrade<svg class="icon icon-info icon-upgrade"><use xlink:href="/img/sprite.svg#icon-info"></use></svg></li>
+                <li class="tab tab-prolong">Prolong
+                  <svg class="icon icon-info icon-prolong"><use xlink:href="/img/sprite.svg#icon-info"></use></svg></li>
             </ul>
         </div>
       
@@ -23,7 +25,7 @@
           <div class="form__group" > <!--  Project -->
             <span class="form__group--text">Original Project</span>
             <input type="url" class="form__control js-input js-input--voucher" id="VoriginalProject"
-            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            placeholder="https://tools.webnode.com/project/?id=XXXXXXX" 
             autocomplete="off">            
           </div>
           <div class="form__group" > <!-- Currency -->
@@ -53,73 +55,129 @@
             value="Reset">      
           </div>
       </form> <!-- END Form Voucher-->
-                          <!--Form Change-->
-      <form id="form__change" class="form form__change form--hidden">
+                          <!--Form Move-->
+      <form id="form__move" class="form form__move form--hidden">
           <div class="form__group" > <!--  Project -->
             <span class="form__group--text">Original Project</span>
-            <input type="url" class="form__control js-input js-input--change " id="CoriginalProject"
-            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            <input type="url" class="form__control js-input js-input--move " id="MoriginalProject"
+            placeholder="https://tools.webnode.com/project/?id=XXXXXXX" 
             autocomplete="off">            
           </div>
           <div class="form__group" > <!-- Original Type of PP -->
             <span class="form__group--text">Original Type of PP</span>
-            <input type="text" class="form__control js-input js-input--change" id="CoriginalType"
+            <input type="text" class="form__control js-input js-input--move" id="MoriginalType"
             placeholder="Profi" autocomplete="off">
           </div>
           <div class="form__group"> <!-- Destination Project -->
             <span class="form__group--text">Dest. Project URL</span>
-            <input type="url" class="form__control js-input js-input--change" id="CdestinationProject"
-            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            <input type="url" class="form__control js-input js-input--move" id="MdestinationProject"
+            placeholder="https://tools.webnode.com/project/?id=XXXXXXX" 
             autocomplete="off">           
           </div>
           <div class="form__group" > <!-- Destination Type of PP -->
             <span class="form__group--text">Destination Type of PP</span>
-            <input type="text" class="form__control js-input js-input--change" id="CdestinationType"
+            <input type="text" class="form__control js-input js-input--move" id="MdestinationType"
             placeholder="Profi" autocomplete="off">
           </div>
           <div class="form__group" > <!-- Currency -->
             <span class="form__group--text">Currency</span>
-            <input type="text" class="form__control js-input js-input--change" id="Ccurrency"
+            <input type="text" class="form__control js-input js-input--move" id="Mcurrency"
             placeholder="EUR" autocomplete="off">
           </div>
           <div class="form__group" ><!-- Years Paid for the PP-->
             <span class="form__group--text">Years Paid</span>
-            <input type="number" class="form__control js-input js-input--change" id="CyearsPaid"
+            <input type="number" class="form__control js-input js-input--move" id="MyearsPaid"
             placeholder="Years Paid" autocomplete="off">         
           </div>     
           <div class="form__group" > <!-- Amount Paid for the PP -->
             <span class="form__group--text">Amount Paid</span>
-            <input type="number" class="form__control js-input js-input--change" id="CamountPaid"
+            <input type="number" class="form__control js-input js-input--move" id="MamountPaid"
             step=".01" placeholder="Amount Paid" autocomplete="off">          
           </div>     
           <div class="form__group"> <!-- Expiration date current package-->
             <span class="form__group--text">Original Expiry Date</span>
-            <input type="text" class="form__control js-input js-input--change" id="CoriginalExpiration"
+            <input type="text" class="form__control js-input js-input--move" id="MoriginalExpiration"
             placeholder="YYYY-MM-DD" autocomplete="off">
           </div>
           <div class="form__group"> <!-- Price of Package Destination Project-->
             <span class="form__group--text">Dest. Package Price</span>
-            <input type="text" class="form__control js-input js-input--change" id="CdestinationPackagePrice"
+            <input type="text" class="form__control js-input js-input--move" id="MdestinationPackagePrice"
             placeholder="New Package Price" autocomplete="off">  
           </div>
           <div class="form__group"> <!-- Expiration date Destination Project-->
             <span class="form__group--text">Dest. Expiration Date</span>
-            <input type="text" class="form__control js-input js-input--change" id="CdestinationExpiration"
+            <input type="text" class="form__control js-input js-input--move" id="MdestinationExpiration"
             placeholder="YYYY-MM-DD" autocomplete="off">
           </div>      
-          <div class="form__group js-btn--change"> <!-- Calculate "Button" -->
-            <input type="submit" class="btn btn__form__change js-btn--calculate" id="Csubmit"
-            value="Calculate Change">       
-            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Creset"
+          <div class="form__group js-btn--move"> <!-- Calculate "Button" -->
+            <input type="submit" class="btn btn__form__move js-btn--calculate" id="Msubmit"
+            value="Calculate Move">       
+            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Mreset"
             value="Reset">
           </div>
-          
       </form>
+      <!-- End Move Form -->
+
+                         
+                    <!--Form Upgrade-->
+        <form id="form__upgrade" class="form form__upgrade form--hidden">
+          <div class="form__group" > <!--  Project -->
+            <span class="form__group--text">Project</span>
+            <input type="url" class="form__control js-input js-input--upgrade " id="UProject"
+            placeholder="https://tools.webnode.com/project/?id=XXXXXXX" 
+            autocomplete="off">            
+          </div>
+          <div class="form__group" > <!-- Original Type of PP -->
+            <span class="form__group--text">Original Type of PP</span>
+            <input type="text" class="form__control js-input js-input--upgrade" id="UoriginalType"
+            placeholder="Profi" autocomplete="off">
+          </div>
+          
+          <div class="form__group" > <!-- Destination Type of PP -->
+            <span class="form__group--text">Final Type of PP</span>
+            <input type="text" class="form__control js-input js-input--upgrade" id="UfinalType"
+            placeholder="Profi" autocomplete="off">
+          </div>
+          <div class="form__group" > <!-- Currency -->
+            <span class="form__group--text">Currency</span>
+            <input type="text" class="form__control js-input js-input--upgrade" id="Ucurrency"
+            placeholder="EUR" autocomplete="off">
+          </div>
+          <div class="form__group" ><!-- Years Paid for the PP-->
+            <span class="form__group--text">Years Paid</span>
+            <input type="number" class="form__control js-input js-input--upgrade" id="UyearsPaid"
+            placeholder="Years Paid" autocomplete="off">         
+          </div>     
+          <div class="form__group" > <!-- Amount Paid for the PP -->
+            <span class="form__group--text">Amount Paid</span>
+            <input type="number" class="form__control js-input js-input--upgrade" id="UamountPaid"
+            step=".01" placeholder="Amount Paid" autocomplete="off">          
+          </div>     
+          <div class="form__group"> <!-- Expiration date current package-->
+            <span class="form__group--text">Original Expiry Date</span>
+            <input type="text" class="form__control js-input js-input--upgrade" id="UoriginalExpiration"
+            placeholder="YYYY-MM-DD" autocomplete="off">
+          </div>
+          <div class="form__group"> <!-- Price of Package Destination Project-->
+            <span class="form__group--text">Final Package Price</span>
+            <input type="text" class="form__control js-input js-input--upgrade" id="UfinalPackagePrice"
+            placeholder="New Package Price" autocomplete="off">  
+          </div>
+           
+          <div class="form__group js-btn--upgrade"> <!-- Calculate "Button" -->
+            <input type="submit" class="btn btn__form__upgrade js-btn--calculate" id="Usubmit"
+            value="Calculate upgrade">       
+            <input type="submit" class="btn btn__form__reset js-btn--reset" id="Ureset"
+            value="Reset">
+          </div>
+      </form>
+      <!-- End upgrade Form -->
+          <!-- Prolong Form -->
       <form id="form__prolong" class="form form__prolong form--hidden">
           <div class="form__group"> <!-- Destination Project -->
             <span class="form__group--text">Dest. Project URL</span>
             <input type="url" class="form__control js-input js-input--prolong" id="PdestinationProject"
-            placeholder="http://tools.webnode.com/project/?id=XXXXXXX" 
+            placeholder="https://tools.webnode.com/project/?id=XXXXXXX" 
             autocomplete="off">           
           </div>
           <div class="form__group" > <!-- Destination Type of PP -->
@@ -151,17 +209,17 @@
           <!-- RESULTS-->
           <div id="results" class="results hidden">
             <h1 class= "results__heading">Results</h1>
-            <div class="form__group hidden js-results-voucher js-results-change">             
+            <div class="form__group hidden js-results-voucher js-results-move js-results-upgrade js-results-prolong">             
                 <span class="form__group--text">Days Remaining</span>
                 <input type="text" class="form__control js-output" id="daysRemaining"
                 disabled>         
             </div>
-            <div class="form__group hidden js-results-voucher js-results-change">          
+            <div class="form__group hidden js-results-voucher js-results-move js-results-upgrade">          
                 <span class="form__group--text">Amount Remaining</span>
                 <input type="text" class="form__control js-output" id="amountRemaining"
                  disabled>         
             </div>
-            <div class="form__group hidden js-results-change js-results-prolong">             
+            <div class="form__group hidden js-results-move js-results-upgrade js-results-prolong">             
                   <span class="form__group--text">New Expiration Date</span>
                   <input type="text" class="form__control js-output" id="newExpirationDate"
                    disabled>               
@@ -169,7 +227,7 @@
             <div class="results__note" id="note"> <!--pb-auto mb-5-->
             </div>
 
-        <div class="btn__wrapper form__group js-btn--copy js-results-voucher js-results-change js-results-prolong">         
+        <div class="btn__wrapper form__group js-btn--copy js-results-voucher js-results-move js-results-upgrade js-results-prolong">         
             <input type="submit" class="btn btn-dark btn-block" id="copy"
             value="Copy to clipboard">         
         </div>
