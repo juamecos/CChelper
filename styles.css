@@ -65,12 +65,9 @@
   justify-content: center;
 
  }
+
 .tab {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  
+ flex: 1;
 }
 .tab,
 .page__heading--secondary {
@@ -87,11 +84,6 @@
 .tab:hover,
 .tab:focus {
   background-color: var(--btn-color-hover)
-}
-.icon-info {
-  height: 1.2rem;
-  width: 1.2rem;
-
 }
 
 .form {

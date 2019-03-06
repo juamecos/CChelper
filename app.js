@@ -44,18 +44,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       })
       reloadPage();
     }
-    if(e.target.classList.contains("icon-voucher")) {
-      console.log(e.target)
-    }
-    if(e.target.classList.contains("icon-move")) {
-      console.log(e.target)
-    }
-    if(e.target.classList.contains("icon-upgrade")) {
-      console.log(e.target)
-    }
-    if(e.target.classList.contains("icon-prolong")) {
-      console.log(e.target)
-    }
+   
   }) // tabList.addEventListener
 
   // Patterns of input value with regex
